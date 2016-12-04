@@ -73,3 +73,5 @@ def test():
                 if y != x:
                     i = bisect.bisect_right(vals, x)
                     assert all(x < z for z in vals[i:])
+if __name__ == "__main__":
+    test()
