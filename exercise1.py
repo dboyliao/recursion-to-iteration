@@ -47,7 +47,7 @@ def find_val_or_next_smallest(bst, x):
         if not bst is None:
             return bst.val
 
-        return bst
+        return None
     else:
         right_best = find_val_or_next_smallest(bst.right, x)
         if right_best is None:
