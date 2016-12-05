@@ -38,9 +38,11 @@ def find_val_or_next_smallest(bst, x):
     """
     if bst is None:
         return None
-    elif bst.val == x:
+
+    if bst.val == x:
         return x
-    elif bst.val > x:
+
+    if bst.val > x:
         while not bst is None and bst.val > x:
             bst = bst.left
 
@@ -49,11 +51,12 @@ def find_val_or_next_smallest(bst, x):
 
         return None
     else:
-        right_best = find_val_or_next_smallest(bst.right, x)
-        if right_best is None:
-            return bst.val
-        return right_best
+        last_val = None
+        while not bst is None and bst.val < x:
+            last_val = bst.val
+            bst = bst.right
 
+        return last_val
 
 # tests
 
